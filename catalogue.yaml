@@ -76,6 +76,6 @@
       msg: "{{ catalogue_output }}"
 
   - name: load products
-    ansible.builtin.shell: mongosh --host mongodb.swetha.fun < /app/db/master-data.js
+    ansible.builtin.command: mongosh --host mongodb.swetha.fun < /app/db/master-data.js
     when: catalogue_output.stdout | int < 0
   
